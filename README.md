@@ -1,5 +1,5 @@
 # RDR2 Law Animations
-This script includes animations which might be usefull for RDR2 RedM RP servers.
+This script includes animations which might be useful for RDR2 RedM RP servers.
 ## Content
 - /hu for Hands up
 - /huk for hands up whilst kneeling
