@@ -35,11 +35,10 @@ RegisterCommand("hu", function(s, a)
         TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_loop", 3.0, -1, -1, 1, 0, false, false, false)
     else
         hu = false
+        StopAnimTask(ped, "mech_busted@arrest", "hands_up_transition", 1.0)
         StopAnimTask(ped, "mech_busted@arrest", "hands_up_loop", 1.0)
-        ClearPedTasksImmediately(ped)
         Wait(150)
-        StopAnimTask(PlayerPedId(), 1.0)
-        ClearPedTasksImmediately(PlayerPedId())
+        ClearPedTasks(PlayerPedId())
     end
 end)
 
