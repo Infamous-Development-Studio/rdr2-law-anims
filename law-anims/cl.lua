@@ -26,13 +26,13 @@ RegisterCommand("hu", function(s, a)
     if hu == false then
         hu = true
         loadAnimDict("mech_busted@arrest")
-        TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_transition", 3.0, -1, -1, 0, 0, false, false, false)
+        TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_transition", 3.0, -1, -1, 0, 0, false, false, false) --31... loops?
         Wait(100)
         while IsEntityPlayingAnim(ped, "mech_busted@arrest", "hands_up_transition", 3) do
             Wait(0)
         end
         StopAnimTask(ped, "mech_busted@arrest", "hands_up_transition", 1.0)
-        TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_loop", 3.0, -1, -1, 1, 0, false, false, false)
+        TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_loop", 3.0, -1, -1, 31, 0, false, false, false)
     else
         hu = false
         StopAnimTask(ped, "mech_busted@arrest", "hands_up_transition", 1.0)
@@ -47,7 +47,7 @@ CreateThread(function()
         Wait(0)
         if IsControlJustPressed(0, 0x43CDA5B0) then
             loadAnimDict("mech_busted@unapproved")
-            TaskPlayAnim(PlayerPedId(), "mech_busted@unapproved", "reach_weapon", 3.0, -1, -1, 0, 0, false, false, false)
+            TaskPlayAnim(PlayerPedId(), "mech_busted@unapproved", "reach_weapon", 3.0, -1, -1, 31, 0, false, false, false)
         elseif IsControlJustReleased(0, 0x43CDA5B0) then
             StopAnimTask(PlayerPedId(), "mech_busted@unapproved", "reach_weapon", 1.0)
         end
