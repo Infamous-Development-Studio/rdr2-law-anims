@@ -26,8 +26,7 @@ RegisterCommand("hu", function(s, a)
     if hu == false then
         hu = true
         loadAnimDict("mech_busted@arrest")
-        TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_transition", 3.0, -1, -1, 0, 0, false, false, false) --31... loops?
-        Wait(100)
+        TaskPlayAnim(ped, "mech_busted@arrest", "hands_up_transition", 3.0, -1, -1, 31, 0, false, false, false)
         while IsEntityPlayingAnim(ped, "mech_busted@arrest", "hands_up_transition", 3) do
             Wait(0)
         end
